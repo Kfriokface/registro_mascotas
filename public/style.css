@@ -1,0 +1,9 @@
+body {
+  background: url(background.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.form-control,
+.form-select {
+  background-color: var(--bs-light);
+}
