@@ -14,7 +14,7 @@ Aplicación básica en **Node.js + Express + EJS** para registrar información s
 
 ---
 
-## Instalación
+##d Instalación
 
 1. Clonar el repositorio o copiar los archivos:
    ```bash
