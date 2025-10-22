@@ -13,11 +13,11 @@
 <body class="d-flex flex-column justify-content-center min-vh-100">
   <main class="container">
     <div class="card shadow-sm">
-      <div class="card-header bg-dark text-white d-flex align-items-center">
-        <a href="/" class="btn btn-light btn-sm me-2">
-          <i class="bi bi-arrow-left"></i>
-        </a>
+      <div class="card-header bg-dark text-white d-flex align-items-center justify-content-between">
         <h4 class="mb-0">Registro de Mascota</h4>
+        <a href="/" class="btn btn-light btn-sm">
+          <i class="bi bi-arrow-left"><span class="ms-1">Inicio</span></i>
+        </a>
       </div>
       <div class="card-body">
         <p class="text-muted small mb-4">
@@ -37,7 +37,7 @@
           <!-- Edad -->
           <div class="mb-3">
             <label for="edad" class="form-label">Edad *</label>
-            <input type="number" class="form-control" id="edad" name="edad" min="0" placeholder="Ej. 3"
+            <input type="number" class="form-control" id="edad" name="edad" placeholder="Ej. 3"
               value="<%= edad || '' %>" required>
             <div class="invalid-feedback">La edad debe ser mayor o igual a 0.</div>
           </div>
@@ -112,8 +112,8 @@
 
 
         <% if (errores && errores.length> 0) { %>
-          <div class="alert alert-danger">
-            <ul>
+          <div class="alert alert-danger m-0 mt-3">
+            <ul class="m-0">
               <% errores.forEach(error=> { %>
                 <li>
                   <%= error %>

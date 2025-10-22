@@ -46,9 +46,9 @@ app.post("/form", (req, res) => {
     );
   }
 
-  // Validar que exista la edad
-  if (!edad) {
-    errores.push("Debes introducir una edad para tu mascota");
+  // Validar que la edad no sea un valor negarivo
+  if (!edad || edad < 0) {
+    errores.push("Para registrar tu mascota primero tiene que haber nacido.");
   }
 
   // Validar que el tipo tenga un valor
