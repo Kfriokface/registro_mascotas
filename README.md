@@ -14,10 +14,26 @@ Aplicación básica en **Node.js + Express + EJS** para registrar información s
 
 ---
 
-##d Instalación
+## Tecnologías utilizadas
+
+| Tecnología                               | Descripción          |
+| ---------------------------------------- | -------------------- |
+| [Node.js](https://nodejs.org/)           | Entorno de ejecución |
+| [Express](https://expressjs.com/)        | Framework backend    |
+| [EJS](https://ejs.co/)                   | Motor de plantillas  |
+| [Bootstrap 5](https://getbootstrap.com/) | Estilos y diseño     |
+
+---
+
+## Instalación y puesta en marcha
 
 1. Clonar el repositorio o copiar los archivos:
    ```bash
    git clone https://github.com/tuusuario/registro-mascota.git
    cd registro-mascota
    ```
+2. Arrancar server
+   ```bash
+   npm run start
+   ```
+3. Navegar a http://localhost:3000
