@@ -29,7 +29,7 @@ Aplicación básica en **Node.js + Express + EJS** para registrar información s
 
 1. Clonar el repositorio o copiar los archivos:
    ```bash
-   git clone https://github.com/tuusuario/registro-mascota.git
+   git clone https://github.com/Kfriokface/registro_mascotas.git
    cd registro-mascota
    ```
 2. Arrancar server
