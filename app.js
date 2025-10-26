@@ -13,6 +13,20 @@ app.use(express.static(path.join(__dirname, "public")));
 // Middleware para parsear datos de formularios (POST)
 app.use(express.urlencoded({ extended: true }));
 
+// Control de timeout
+app.use((req, res, next) => {
+  const ms = 10000; //10 seg en milisegundos
+  const timer = setTimeout(() => {
+    if (!res.headersSent) {
+      console.warn("Tiempo de espera agotado");
+      res.status(408).send("Tiempo de espera agotado");
+    }
+  }, ms);
+  res.once("finish", () => clearTimeout(timer)); // se cierra el timer cuando transcurren el tiempo definido
+  res.once("close", () => clearTimeout(timer)); // se cierra el timer si el usuario cierra la ventana antes de que finalice en timer
+  next();
+});
+
 // ----------------------
 // Formulario
 // ----------------------
@@ -61,7 +75,7 @@ app.post("/form", (req, res) => {
     errores.push("Debes escoger el tamaño de tu mascota para registrarla");
   }
 
-  // Si hay errores, volvemos a renderizar el formulario con mensajes y los valores previos
+  // Si hay errores, se vuelve a renderizar el formulario con mensajes y los valores previos
   if (errores.length > 0) {
     return res.render("form", {
       nombre,
@@ -73,7 +87,7 @@ app.post("/form", (req, res) => {
     });
   }
 
-  // Si no hay errores, seguimos al siguiente paso
+  // Si no hay errores, lanzo la página de respuestas
   res.render("resultado", {
     nombre,
     edad,
